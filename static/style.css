@@ -1,0 +1,106 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: #1e40af;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 { font-size: 1.6rem; }
+header p { font-size: 0.9rem; opacity: 0.9; }
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #1e3a8a;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+}
+
+nav a:hover { background: #2563eb; }
+
+main {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h2 { margin-bottom: 16px; color: #1e40af; }
+
+form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button {
+    padding: 12px;
+    background: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover { background: #2563eb; }
+
+.cartes { display: grid; gap: 12px; grid-template-columns: 1fr; }
+
+.carte {
+    display: block;
+    padding: 16px;
+    background: #eff6ff;
+    border-left: 4px solid #1e40af;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #222;
+}
+
+.carte:hover { background: #dbeafe; }
+.carte h3 { color: #1e40af; margin-bottom: 4px; }
+
+.ok { color: #15803d; font-weight: bold; }
+.alerte { color: #b45309; font-weight: bold; }
+.danger { color: #b91c1c; font-weight: bold; }
+
+.resultat { padding: 16px; border-radius: 6px; margin-top: 16px; }
+.resultat.rouge { background: #fee2e2; border-left: 4px solid #b91c1c; }
+.resultat.orange { background: #fef3c7; border-left: 4px solid #b45309; }
+.resultat.vert { background: #dcfce7; border-left: 4px solid #15803d; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+th, td { padding: 10px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+th { background: #eff6ff; color: #1e40af; }
+
+footer {
+    text-align: center;
+    padding: 16px;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+@media (min-width: 600px) {
+    .cartes { grid-template-columns: 1fr 1fr; }
+}

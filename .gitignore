@@ -1,0 +1,6 @@
+﻿__pycache__/
+*.pyc
+antiarnaque.db
+signalements.json
+*.db
+.env

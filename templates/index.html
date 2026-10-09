@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Bienvenue</h2>
+<p>Cette application vous aide a vous proteger contre les arnaques telephoniques.</p>
+
+<div class="cartes">
+    <a class="carte" href="{{ url_for('verifier') }}">
+        <h3>Verifier un numero</h3>
+        <p>Voir si un numero a deja ete signale</p>
+    </a>
+    <a class="carte" href="{{ url_for('signaler') }}">
+        <h3>Signaler</h3>
+        <p>Ajouter un numero suspect</p>
+    </a>
+    <a class="carte" href="{{ url_for('analyser') }}">
+        <h3>Analyser un message</h3>
+        <p>Detecter un SMS suspect</p>
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Verifier un numero</h2>
+
+<form method="POST">
+    <input type="text" name="numero" placeholder="+22890123456" value="{{ numero }}" required>
+    <button type="submit">Verifier</button>
+</form>
+
+{% if resultats is not none %}
+    {% if resultats|length == 0 %}
+        <p class="ok">Aucun signalement pour ce numero.</p>
+    {% else %}
+        <p class="alerte">{{ resultats|length }} signalement(s) trouve(s) :</p>
+        <ul>
+            {% for r in resultats %}
+                <li><strong>{{ r['type_arnaque'] }}</strong> - {{ r['date'] }}<br>{{ r['description'] }}</li>
+            {% endfor %}
+        </ul>
+        {% if resultats|length >= 5 %}
+            <p class="danger">RISQUE ELEVE - Ne repondez pas.</p>
+        {% endif %}
+    {% endif %}
+{% endif %}
+{% endblock %}

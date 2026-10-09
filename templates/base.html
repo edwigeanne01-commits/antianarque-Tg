@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiArnaque TG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>AntiArnaque TG</h1>
+        <p>Signaler, verifier, se proteger</p>
+    </header>
+    <nav>
+        <a href="{{ url_for('index') }}">Accueil</a>
+        <a href="{{ url_for('verifier') }}">Verifier</a>
+        <a href="{{ url_for('signaler') }}">Signaler</a>
+        <a href="{{ url_for('analyser') }}">Analyser</a>
+        <a href="{{ url_for('liste') }}">Liste</a>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Projet educatif - 2026</p>
+    </footer>
+</body>
+</html>

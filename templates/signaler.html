@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Signaler un numero</h2>
+
+{% if message %}
+    <p class="ok">{{ message }}</p>
+{% endif %}
+
+<form method="POST">
+    <label>Numero :</label>
+    <input type="text" name="numero" placeholder="+22890123456" required>
+
+    <label>Type d'arnaque :</label>
+    <select name="type_arnaque" required>
+        {% for t in types %}
+            <option value="{{ t }}">{{ t }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Description (optionnel) :</label>
+    <textarea name="description" rows="3"></textarea>
+
+    <button type="submit">Signaler</button>
+</form>
+{% endblock %}

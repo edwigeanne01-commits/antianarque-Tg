@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Analyser un message suspect</h2>
+
+<form method="POST">
+    <textarea name="message" rows="5" placeholder="Collez le SMS ici..." required></textarea>
+    <button type="submit">Analyser</button>
+</form>
+
+{% if resultat %}
+    <div class="resultat {{ resultat.couleur }}">
+        <h3>Verdict : {{ resultat.verdict }}</h3>
+        <p>Score de risque : {{ resultat.score }}</p>
+        {% if resultat.trouves %}
+            <p>Mots-cles detectes :</p>
+            <ul>
+                {% for m in resultat.trouves %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endif %}
+{% endblock %}

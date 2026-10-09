@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Numeros les plus signales</h2>
+
+{% if numeros|length == 0 %}
+    <p>Aucun signalement pour le moment.</p>
+{% else %}
+    <table>
+        <tr><th>Numero</th><th>Signalements</th></tr>
+        {% for n in numeros %}
+            <tr>
+                <td>{{ n['numero'] }}</td>
+                <td>{{ n['nb'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}
