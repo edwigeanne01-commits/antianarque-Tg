@@ -4,18 +4,18 @@
 <h2>Bienvenue</h2>
 <p>Cette application vous aide a vous proteger contre les arnaques telephoniques.</p>
 
-<div class="cartes">
+<div class="cartes" style="margin-top: 24px;">
     <a class="carte" href="{{ url_for('verifier') }}">
         <h3>Verifier un numero</h3>
-        <p>Voir si un numero a deja ete signale</p>
+        <p>Voir si un numero a deja ete signale par la communaute</p>
     </a>
     <a class="carte" href="{{ url_for('signaler') }}">
         <h3>Signaler</h3>
-        <p>Ajouter un numero suspect</p>
+        <p>Ajouter un numero suspect pour proteger les autres</p>
     </a>
     <a class="carte" href="{{ url_for('analyser') }}">
         <h3>Analyser un message</h3>
-        <p>Detecter un SMS suspect</p>
+        <p>Detecter automatiquement les SMS frauduleux</p>
     </a>
 </div>
 {% endblock %}
